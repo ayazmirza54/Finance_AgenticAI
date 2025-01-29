@@ -117,7 +117,7 @@ def initialize_agents():
             st.session_state.web_agent = Agent(
                 name="Web Search Agent",
                 role="Search the web for the information",
-                model=Groq(api_key=GROQ_API_KEY),
+                model=Groq(id="llama-3.3-70b-versatile",api_key=GROQ_API_KEY),
                 tools=[
                     GoogleSearch(fixed_language='english', fixed_max_results=5),
                     DuckDuckGo(fixed_max_results=5)
