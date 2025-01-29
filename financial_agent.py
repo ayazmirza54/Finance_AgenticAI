@@ -130,7 +130,7 @@ def initialize_agents():
             st.session_state.finance_agent = Agent(
                 name="Financial AI Agent",
                 role="Providing financial insights",
-                model=Groq(api_key=GROQ_API_KEY),
+                model=Groq(id="llama-3.3-70b-versatile",api_key=GROQ_API_KEY),
                 tools=[
                     YFinanceTools(
                         stock_price=True,
@@ -147,7 +147,7 @@ def initialize_agents():
             st.session_state.multi_ai_agent = Agent(
                 name='A Stock Market Agent',
                 role='A comprehensive assistant specializing in stock market analysis',
-                model=Groq(api_key=GROQ_API_KEY),
+                model=Groq(id="llama-3.3-70b-versatile",api_key=GROQ_API_KEY),
                 team=[st.session_state.web_agent, st.session_state.finance_agent],
                 instructions=["Provide comprehensive analysis with multiple data sources"],
                 show_tool_calls=True,
